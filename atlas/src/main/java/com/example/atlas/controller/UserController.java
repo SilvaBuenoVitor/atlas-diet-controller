@@ -20,7 +20,7 @@ public class UserController {
     private UserRepository repository;
 
     @PostMapping
-    public ResponseEntity login(@RequestBody User user, HttpServletRequest request, UriComponentsBuilder builder){
+    public ResponseEntity<User> login(@RequestBody User user, HttpServletRequest request, UriComponentsBuilder builder){
         if (repository.login(user)){
             return ResponseEntity.ok().build();
         }
