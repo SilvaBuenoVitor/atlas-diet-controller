@@ -25,12 +25,12 @@ public class UserRepository {
         users.add(u1);
     }
 
-    public boolean login(User login){
+    public int login(User login){
         for (User user : users) {
             if(user.getEmail().equals(login.getEmail()) && user.getPassword().equals(login.getPassword())){
-                return true;
+                return user.getId();
             }
         }
-        return false;
+        return -1;
     }
 }

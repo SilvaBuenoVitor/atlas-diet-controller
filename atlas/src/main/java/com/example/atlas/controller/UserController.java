@@ -6,6 +6,7 @@ import com.example.atlas.model.User;
 import com.example.atlas.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,10 +21,11 @@ public class UserController {
     private UserRepository repository;
 
     @PostMapping
-    public ResponseEntity<User> login(@RequestBody User user, HttpServletRequest request, UriComponentsBuilder builder){
-        if (repository.login(user)){
-            return ResponseEntity.ok().build();
+    public ResponseEntity<Integer> login(@RequestBody User user, HttpServletRequest request, UriComponentsBuilder builder){
+        int answer = repository.login(user);
+        if (answer != -1){
+            return ResponseEntity.ok().body(answer);
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(answer);
     }
 }
