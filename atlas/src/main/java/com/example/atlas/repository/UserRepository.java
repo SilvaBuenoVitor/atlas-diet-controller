@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserRepository {
     private List<User> users;
-    private int nextId = 1;
+    // private int nextId = 1;
     
     @PostConstruct
     public void init(){

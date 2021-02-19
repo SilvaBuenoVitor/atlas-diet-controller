@@ -1,6 +1,7 @@
 package com.example.atlas.repository;
 
 import org.apache.tomcat.jni.Time;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,7 +14,9 @@ import com.example.atlas.model.Meal;
 public class MealRepository {
     private List<Meal> meals;
     private int nextId = 1;
-    private FoodRepository foodRepository = new FoodRepository();
+    
+    @Autowired
+    private FoodRepository foodRepository;
 
     @PostConstruct
     public void init(){
@@ -22,7 +25,7 @@ public class MealRepository {
         m1.setIdUser(0);
         m1.setFoods(foodRepository.getFoodByUserId(0));
         m1.setId(nextId);
-        m1.setTime(new java.sql.Time(Time.now()));
+        // m1.setTime();
 
         meals = new ArrayList<Meal>();
         meals.add(m1);
