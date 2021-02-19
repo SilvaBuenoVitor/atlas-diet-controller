@@ -1,12 +1,13 @@
 package com.example.atlas.model;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.List;
 
 public class Meal {
     private int idUser;
     private int id;
-    private Time time;
+    private LocalTime time;
     private String name;
     private List<Food> foods;
 
@@ -42,13 +43,15 @@ public class Meal {
         this.foods = foods;
     }
 
-    public Time getTime() {
+    public LocalTime getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(LocalTime time) {
         this.time = time;
     }
+
+   
 
     
 }

@@ -4,6 +4,7 @@ import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class MealRepository {
         m1.setIdUser(0);
         m1.setFoods(foodRepository.getFoodByUserId(0));
         m1.setId(nextId);
-        // m1.setTime();
+        m1.setTime(LocalTime.now());
 
         meals = new ArrayList<Meal>();
         meals.add(m1);
