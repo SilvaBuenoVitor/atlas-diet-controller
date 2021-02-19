@@ -1,27 +1,21 @@
 package com.example.atlas.model;
 
-import java.util.ArrayList;
+import java.sql.Time;
 import java.util.List;
 
 public class Meal {
+    private int idUser;
     private int id;
-    private String mealName;
-    private List<String> itens = new ArrayList<String>();
+    private Time time;
+    private String name;
+    private List<Food> foods;
 
-    public String getMealName() {
-        return mealName;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setMealName(String mealName) {
-        this.mealName = mealName;
-    }
-
-    public List<String> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<String> itens) {
-        this.itens = itens;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public int getId() {
@@ -32,6 +26,29 @@ public class Meal {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
 
     
 }
