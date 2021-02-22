@@ -25,7 +25,7 @@ public class MealRepository {
         m1.setName("Café");
         m1.setIdUser(0);
         m1.setFoods(foodRepository.getFoodByUserId(0));
-        m1.setId(nextId);
+        m1.setId(0);
         m1.setTime(LocalTime.now());
 
         meals = new ArrayList<Meal>();
