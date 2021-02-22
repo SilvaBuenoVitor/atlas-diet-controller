@@ -28,6 +28,7 @@ public class MealController {
         return repository.getMealsByUserId(userId);
     }
 
+    //needs validation
     @PostMapping("/{userId}")
     public ResponseEntity<Meal> save(@RequestBody Meal meal,@PathVariable int userId,HttpServletRequest request, UriComponentsBuilder builder){
         meal.setIdUser(userId);
